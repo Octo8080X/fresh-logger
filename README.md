@@ -1,10 +1,11 @@
 # Fresh Logger
 
-This logger is simple and advanced logger module for [Deno Fresh](https://fresh.deno.dev/)
+This logger is simple and advanced logger module for
+[Deno Fresh](https://fresh.deno.dev/)
 
 ## Usage
 
-## Simple 
+## Simple
 
 ```ts _middleware.ts
 import {loggerHandler} from "https://deno.land/x/fresh_logger@0.0.1/mod.ts";
@@ -28,6 +29,4 @@ function loggerHandler(_req: Request, ctx: MiddlewareHandlerContext<Logger>) {
     return ctx.next();
 }
 export const handler = [loggerHandler];
-
 ```
-

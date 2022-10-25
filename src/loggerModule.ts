@@ -1,4 +1,4 @@
-import { MiddlewareHandlerContext, nanoid } from "../deps.ts";
+import { type MiddlewareHandlerContext, nanoid } from "../deps.ts";
 
 export type RemoteLogSenderFunction = (
   level: LogLevel,

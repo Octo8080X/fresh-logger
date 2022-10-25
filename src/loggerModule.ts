@@ -1,7 +1,10 @@
-import { MiddlewareHandlerContext, nanoid } from "../deps.ts";
+import { type MiddlewareHandlerContext, nanoid } from "../deps.ts";
 
-type RemoteLogSenderFunction = (level: LogLevel, logBody: string) => void;
-type LogLevel = "log" | "info" | "error" | "warn";
+export type RemoteLogSenderFunction = (
+  level: LogLevel,
+  logBody: string,
+) => void;
+export type LogLevel = "log" | "info" | "error" | "warn";
 
 export class LogModule {
   #id: string;

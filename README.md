@@ -70,7 +70,7 @@ import manifest from "./fresh.gen.ts";
 import twindPlugin from "$fresh/plugins/twind.ts";
 import twindConfig from "./twind.config.ts";
 
-import { getLoggerHandler } from "https://deno.land/x/fresh_logger@0.0.2/mod.ts"; // <= import module
+import { getLoggerHandler } from "https://deno.land/x/fresh_logger@0.0.2/mod.ts"; // <= Import module
 
 await start(manifest, {
   plugins: [

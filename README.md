@@ -54,6 +54,8 @@ export const handler = [loggerHandler];
 ### For After Fresh 1.3.0
 
 ```ts main.ts
+// main.ts
+
 /// <reference no-default-lib="true" />
 /// <reference lib="dom" />
 /// <reference lib="dom.iterable" />

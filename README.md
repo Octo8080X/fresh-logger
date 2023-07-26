@@ -50,3 +50,31 @@ function loggerHandler(_req: Request, ctx: MiddlewareHandlerContext<Logger>) {
 }
 export const handler = [loggerHandler];
 ```
+
+### For After Fresh 1.3.0
+
+```ts main.ts
+/// <reference no-default-lib="true" />
+/// <reference lib="dom" />
+/// <reference lib="dom.iterable" />
+/// <reference lib="dom.asynciterable" />
+/// <reference lib="deno.ns" />
+
+import "$std/dotenv/load.ts";
+
+import { start } from "$fresh/server.ts";
+import manifest from "./fresh.gen.ts";
+
+import twindPlugin from "$fresh/plugins/twind.ts";
+import twindConfig from "./twind.config.ts";
+
+import { getLoggerHandler } from "https://deno.land/x/fresh_logger@0.0.2/mod.ts"; // <= import module
+
+await start(manifest, {
+  plugins: [
+    getLoggerHandler(), // <= Set handler
+    twindPlugin(twindConfig),
+  ],
+});
+
+```

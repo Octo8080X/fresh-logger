@@ -9,7 +9,7 @@ import {
   type RemoteLogSenderFunction,
 } from "./loggerModule.ts";
 
-export function getLoggerHandler(logSender?: RemoteLogSenderFunction): Plugin {
+export function getLoggerHandler(logSender?: RemoteLogSenderFunction): Plugin<Logger> {
   const handler: MiddlewareHandler<Logger> = async function (
     _req: Request,
     ctx: MiddlewareHandlerContext<Logger>
@@ -23,7 +23,7 @@ export function getLoggerHandler(logSender?: RemoteLogSenderFunction): Plugin {
     middlewares: [
       {
         middleware: {
-          handler: handler as MiddlewareHandler<Record<"logger", unknown>>,
+          handler: handler,
         },
         path: "/",
       },
